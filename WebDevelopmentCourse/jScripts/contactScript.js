@@ -3,7 +3,8 @@ var successFeedback = "ההודעה נשלחה בהצלחה";
 var failFeedback = "היתה בעיה בשליחת ההודעה, אנא נסה מאוחר יותר";
 var serverName = "";
 //serverName = "http://localhost:50467/WebSite3/";
-serverName = "http://webdevelopmentcourse.telem-hit.net/"
+//serverName = "http://webdevelopmentcourse.telem-hit.net/"
+serverName = "https://webdevelopmentcourse.github.io/contactUs/WebDevelopmentCourse";
 
 var ajaxLoaderImageURL = serverName + "images/ajaxloader.gif";
 
