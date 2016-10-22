@@ -6,7 +6,7 @@ var serverName = "";
 //serverName = "http://webdevelopmentcourse.telem-hit.net/"
 serverName = "https://webdevelopmentcourse.github.io/contactUs/WebDevelopmentCourse";
 
-var ajaxLoaderImageURL = serverName + "images/ajaxloader.gif";
+var ajaxLoaderImageURL = serverName + "images/ajaxLoader.gif";
 
 
 
