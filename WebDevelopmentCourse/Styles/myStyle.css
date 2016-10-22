@@ -1,0 +1,15 @@
+﻿body 
+{
+    direction:rtl;
+    font-family:Arial;
+}
+input[type='text'],textarea
+{
+    border:1px solid gray;
+}
+
+td
+{
+ vertical-align:top; 
+ width:200px;
+}
