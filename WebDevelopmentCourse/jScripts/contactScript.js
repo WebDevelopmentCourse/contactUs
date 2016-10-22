@@ -79,7 +79,7 @@ function getFormValue() {
 
 function send2Server(str) {
     showAjaxLoader();
-    var theServer = serverName + "handler.ashx?callback=?";
+    var theServer = "handler.ashx?callback=?";
     //theServer = "http://localhost:50467/WebSite3/handler.ashx?callback=?";
     var theVars = "&sendTo=" + myEncode(myEmail) + "&theMailBody=" + str;
     $.getJSON(theServer + theVars,
