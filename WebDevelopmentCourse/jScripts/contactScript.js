@@ -96,7 +96,7 @@ function send2Server(str) {
         }
     });
     */
-     var theServer = "https://www.hit.ac.il/telemDev/TelemWebDevelopmentCourseContact_me.php";
+     var theServer = "https://wwws.hit.ac.il/facebook/telemDev/TelemWebDevelopmentCourseContact_me.php";
         $.ajax({
                 url: theServer,
                 type: "POST",
