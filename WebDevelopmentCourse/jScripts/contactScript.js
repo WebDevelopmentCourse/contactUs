@@ -80,11 +80,11 @@ function send2Server(str) {
     showAjaxLoader();
    // var theServer = serverName +"Handler.ashx?callback=?";
 
-   // var theServer =  "http://webdevelopmentcourse.telem-hit.net/Handler.ashx?callback=?"
-   // var theVars = "&sendTo=" + myEncode(myEmail) + "&theMailBody=" + str;
-  //  $.getJSON(theServer + theVars,
- //   function (json) {
- /*       hideAjaxLoader();
+   var theServer =  "http://webdevelopmentcourse.telem-hit.net/Handler.ashx?callback=?"
+    var theVars = "&sendTo=" + myEncode(myEmail) + "&theMailBody=" + str;
+   $.getJSON(theServer + theVars,
+   function (json) {
+       hideAjaxLoader();
         $("div#feedback").html("");
         addAjaxLoaderToFeedbackDiv();
         if (json.msg == true) {
@@ -95,8 +95,8 @@ function send2Server(str) {
             $("div#feedback").css("color", "red");
         }
     });
-    */
-     var theServer = "https://wwws.hit.ac.il/facebook/telemDev/TelemWebDevelopmentCourseContact_me.php";
+    
+   /*  var theServer = "https://wwws.hit.ac.il/facebook/telemDev/TelemWebDevelopmentCourseContact_me.php";
         $.ajax({
                 url: theServer,
                 type: "POST",
@@ -120,7 +120,7 @@ function send2Server(str) {
                        $("div#feedback").css("color", "red");
 
                 },
-            })
+            }) */
 }
 
 
