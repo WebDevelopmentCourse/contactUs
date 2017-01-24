@@ -98,7 +98,7 @@ function send2Server(str) {
     */
     console.log("str: "+ str);
     console.log("myEmail: "+ myEmail);
-     var theServer = "https://wwws.hit.ac.il/facebook/telemDev/TelemWebDevelopmentCourseContact_me2.php";
+     var theServer = "https://wwws.hit.ac.il/facebook/telemDev/TelemWebDevelopmentCourseContact_me.php";
         $.ajax({
                 url: theServer,
                 type: "POST",
@@ -124,7 +124,7 @@ function send2Server(str) {
 
                 },
             complete : function(data) {
-                console.log(data);
+                console.log(data.statusText);
             }
            
   });
