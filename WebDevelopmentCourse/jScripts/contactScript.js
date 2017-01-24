@@ -106,7 +106,7 @@ function send2Server(str) {
                     theMailBody: str,
                     sendTo: myEmail,
                 },
-                cache: false,
+                cache: false/*,
                 success: function() {
                        hideAjaxLoader();
                         $("div#feedback").html("");
@@ -121,8 +121,10 @@ function send2Server(str) {
                        $("div#feedback").append(failFeedback);
                        $("div#feedback").css("color", "red");
 
-                }
-            }) 
+                }*/
+            }).done(function( msg ) {
+    alert( "Data Saved: " + msg );
+  });
 }
 
 
