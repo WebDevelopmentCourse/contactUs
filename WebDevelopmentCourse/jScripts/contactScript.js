@@ -84,7 +84,8 @@ function send2Server(str) {
         $.ajax({
                 url: theServer,
                 type: "POST",
-            contentType: "application/x-www-form-urlencoded",
+            jsonpCallback: 'myJSON',
+                contentType: "application/json",
                 data: {
                     theMailBody: str,
                     sendTo: myEmail,
