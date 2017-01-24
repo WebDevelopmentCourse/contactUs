@@ -121,7 +121,7 @@ function send2Server(str) {
                        $("div#feedback").append(failFeedback);
                        $("div#feedback").css("color", "red");
 
-                },
+                }
             }) 
 }
 
