@@ -14,7 +14,7 @@ $(function () {
     var theEmailString = "";
     $("input[type='submit']").click(function () {
         theEmailString = getFormValue();
-        send2Server(myEncode(theEmailString));
+        send2Server(theEmailString);
         return false;
     });
 
