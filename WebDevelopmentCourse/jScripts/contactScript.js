@@ -86,7 +86,7 @@ function send2Server(str) {
                 type: "POST",
             dataType: 'html',
                 data: {
-                    theMailBody: str,
+                    theMailBody: myEncode(str),
                     sendTo: myEmail,
                 },
                 cache: false,
@@ -111,8 +111,8 @@ function send2Server(str) {
 
 
 function myEncode(str) {
-   return encodeURIComponent(str).replace(/\'/g, "%27");
-   // return encodeURIComponent(str).replace(/\'/g, "</br>");
+   //return encodeURIComponent(str).replace(/\'/g, "%27");
+    return encodeURIComponent(str).replace(/\'/g$, "</br>");
 }
 
 function addAjaxLoaderToFeedbackDiv() {
