@@ -106,22 +106,23 @@ function send2Server(str) {
                     theMailBody: str,
                     sendTo: myEmail,
                 },
-                cache: false/*,
-                success: function() {
+                cache: false,
+                success: function(data) {
                        hideAjaxLoader();
                         $("div#feedback").html("");
                         addAjaxLoaderToFeedbackDiv();
                         $("div#feedback").append(successFeedback);
                         $("div#feedback").css("color", "green");
                 },
-                        error: function() {
+                        error: function(data) {
+                             console.log("data: "+ data);
                        hideAjaxLoader();
                        $("div#feedback").html("");
                        addAjaxLoaderToFeedbackDiv();
                        $("div#feedback").append(failFeedback);
                        $("div#feedback").css("color", "red");
 
-                }*/
+                }
             }).always(function( msg ) {
     alert( "Data Saved: " + msg );
   });
