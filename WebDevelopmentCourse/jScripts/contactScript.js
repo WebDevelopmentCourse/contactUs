@@ -108,23 +108,19 @@ function send2Server(str) {
                     sendTo: myEmail,
                 },
                 cache: false,
-                success: function(data) {
-                       hideAjaxLoader();
-                        $("div#feedback").html("");
-                        addAjaxLoaderToFeedbackDiv();
+                complete : function(data) {
+                console.log(data.statusText);
+                hideAjaxLoader();
+                $("div#feedback").html("");
+                addAjaxLoaderToFeedbackDiv();
+                if(data.statusText =="success"){ 
                         $("div#feedback").append(successFeedback);
                         $("div#feedback").css("color", "green");
-                },
-                        error: function(data) {
-                       hideAjaxLoader();
-                       $("div#feedback").html("");
-                       addAjaxLoaderToFeedbackDiv();
+                }
+                else{
                        $("div#feedback").append(failFeedback);
                        $("div#feedback").css("color", "red");
-
-                },
-            complete : function(data) {
-                console.log(data.statusText);
+                }
             }
            
   });
