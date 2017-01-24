@@ -98,7 +98,7 @@ function send2Server(str) {
     */
     console.log("str: "+ str);
     console.log("myEmail: "+ myEmail);
-     var theServer = "https://wwws.hit.ac.il/facebook/telemDev/TelemWebDevelopmentCourseContact_me2.php";
+     var theServer = "https://wwws.hit.ac.il/facebook/telemDev/TelemWebDevelopmentCourseContact_me.php";
         $.ajax({
                 url: theServer,
                 type: "POST",
@@ -115,7 +115,6 @@ function send2Server(str) {
                         $("div#feedback").css("color", "green");
                 },
                         error: function(data) {
-                             console.log( data);
                        hideAjaxLoader();
                        $("div#feedback").html("");
                        addAjaxLoaderToFeedbackDiv();
@@ -126,15 +125,16 @@ function send2Server(str) {
             complete : function(data) {
                 console.log(data);
             }
-            /*.always(function( msg ) {
-    alert( "Data Saved: " + msg );*/
+            .always(function( msg ) {
+    console.log( "Data Saved: " + msg );}
   });
 }
 
 
 
 function myEncode(str) {
-    return encodeURIComponent(str).replace(/\'/g, "%27");
+  //  return encodeURIComponent(str).replace(/\'/g, "%27");
+    return encodeURIComponent(str).replace(/\'/g, "</br>");
 }
 
 function addAjaxLoaderToFeedbackDiv() {
