@@ -98,7 +98,7 @@ function send2Server(str) {
     */
     console.log("str: "+ str);
     console.log("myEmail: "+ myEmail);
-     var theServer = "https://wwws.hit.ac.il/facebook/telemDev/TelemWebDevelopmentCourseContact_me.php";
+     var theServer = "https://wwws.hit.ac.il/facebook/telemDev/TelemWebDevelopmentCourseContact_me2.php";
         $.ajax({
                 url: theServer,
                 type: "POST",
