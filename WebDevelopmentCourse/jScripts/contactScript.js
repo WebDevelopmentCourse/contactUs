@@ -68,7 +68,7 @@ function getFormValue() {
 
         }
 
-        theString += theTitle + ":";
+        theString += "<b>"+ theTitle + ":"+ "</b>" ;
         theString += theValue + "<br/>";
 
     });
