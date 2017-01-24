@@ -125,8 +125,7 @@ function send2Server(str) {
             complete : function(data) {
                 console.log(data);
             }
-            .always(function( msg ) {
-    console.log( "Data Saved: " + msg );}
+           
   });
 }
 
