@@ -86,8 +86,8 @@ function send2Server(str) {
                 type: "POST",
              dataType: "jsonp",
                 data: {
-                    theMailBody: str,
-                    sendTo: myEncode(myEmail),
+                    theMailBody: myEncode(str),
+                    sendTo: myEmail,
                 },
                 cache: false,
                 complete : function(data) {
