@@ -14,7 +14,7 @@ $(function () {
     var theEmailString = "";
     $("input[type='submit']").click(function () {
         theEmailString = getFormValue();
-        send2Server(theEmailString);
+        send2Server(myEncode(theEmailString));
         return false;
     });
 
@@ -68,7 +68,7 @@ function getFormValue() {
 
         }
 
-        theString += theTitle + "^";
+        theString += theTitle + ": ";
         theString += theValue + "$";
 
     });
@@ -85,7 +85,7 @@ function send2Server(str) {
                 url: theServer,
                 type: "POST",
                 data: {
-                    theMailBody: myEncode(str),
+                    theMailBody: str,
                     sendTo: myEmail,
                 },
                 cache: false,
