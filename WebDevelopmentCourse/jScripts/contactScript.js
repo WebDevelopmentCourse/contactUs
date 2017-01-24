@@ -94,7 +94,7 @@ function send2Server(str) {
                 hideAjaxLoader();
                 $("div#feedback").html("");
                 addAjaxLoaderToFeedbackDiv();
-                if(data.statusText =="success"){ 
+                if(data.statusText =="OK"){ 
                         $("div#feedback").append(successFeedback);
                         $("div#feedback").css("color", "green");
                 }
