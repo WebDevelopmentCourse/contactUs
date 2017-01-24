@@ -84,7 +84,6 @@ function send2Server(str) {
         $.ajax({
                 url: theServer,
                 type: "POST",
-            dataType: 'html',
                 data: {
                     theMailBody: myEncode(str),
                     sendTo: myEmail,
@@ -111,8 +110,8 @@ function send2Server(str) {
 
 
 function myEncode(str) {
-   return encodeURIComponent(str).replace(/\'/g, "%27");
-   // return encodeURIComponent(str).replace(/\'/g, "</br>");
+  // return encodeURIComponent(str).replace(/\'/g, "%27");
+    return encodeURIComponent(str).replace(/\'/g, "</br>");
 }
 
 function addAjaxLoaderToFeedbackDiv() {
