@@ -85,9 +85,9 @@ function send2Server(str) {
                 url: theServer,
                 type: "POST",
             crossDomain:true,
-             dataType: "json",
+             dataType: "postData",
                 data: {
-                    theMailBody: myEncode(str),
+                    theMailBody: str,
                     sendTo: myEmail,
                 },
                 cache: false,
