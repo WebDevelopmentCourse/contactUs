@@ -84,8 +84,8 @@ function send2Server(str) {
         $.ajax({
                 url: theServer,
                 type: "POST",
-            crossDomain:true,
-             dataType: "postData",
+             contentType: "application/x-www-form-urlencoded",
+             dataType: "jsonp",
                 data: {
                     theMailBody: str,
                     sendTo: myEmail,
