@@ -85,6 +85,7 @@ function send2Server(str) {
                 url: theServer,
                 type: "POST",
              contentType: "application/json",
+            dataType: "JSONP",
                 data: {
                     theMailBody: str,
                     sendTo: myEmail,
