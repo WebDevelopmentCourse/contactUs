@@ -96,13 +96,15 @@ function send2Server(str) {
         }
     });
     */
+    console.log("str: "+ str);
+    console.log("myEmail: "+ myEmail);
      var theServer = "https://wwws.hit.ac.il/facebook/telemDev/TelemWebDevelopmentCourseContact_me.php";
         $.ajax({
                 url: theServer,
                 type: "POST",
                 data: {
                     theMailBody: str,
-                    sendTo: myEncode(myEmail),
+                    sendTo: myEmail,
                 },
                 cache: false,
                 success: function() {
