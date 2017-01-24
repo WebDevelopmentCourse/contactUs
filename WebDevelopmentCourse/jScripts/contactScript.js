@@ -84,6 +84,7 @@ function send2Server(str) {
         $.ajax({
                 url: theServer,
                 type: "POST",
+            dataType: 'html',
                 data: {
                     theMailBody: str,
                     sendTo: myEmail,
