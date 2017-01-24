@@ -115,7 +115,7 @@ function send2Server(str) {
                         $("div#feedback").css("color", "green");
                 },
                         error: function(data) {
-                             console.log( data.toSource());
+                             console.log( data);
                        hideAjaxLoader();
                        $("div#feedback").html("");
                        addAjaxLoaderToFeedbackDiv();
