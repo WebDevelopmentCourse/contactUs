@@ -122,9 +122,12 @@ function send2Server(str) {
                        $("div#feedback").append(failFeedback);
                        $("div#feedback").css("color", "red");
 
-                }
-            }).always(function( msg ) {
-    alert( "Data Saved: " + msg );
+                },
+            complete : function(data) {
+                console.log(data);
+            }
+            })/*.always(function( msg ) {
+    alert( "Data Saved: " + msg );*/
   });
 }
 
