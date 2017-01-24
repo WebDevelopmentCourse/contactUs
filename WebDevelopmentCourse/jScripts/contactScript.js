@@ -78,24 +78,6 @@ function getFormValue() {
 
 function send2Server(str) {
     showAjaxLoader();
-   // var theServer = serverName +"Handler.ashx?callback=?";
-
-  /* var theServer =  "http://webdevelopmentcourse.telem-hit.net/Handler.ashx?callback=?"
-    var theVars = "&sendTo=" + myEncode(myEmail) + "&theMailBody=" + str;
-   $.getJSON(theServer + theVars,
-   function (json) {
-       hideAjaxLoader();
-        $("div#feedback").html("");
-        addAjaxLoaderToFeedbackDiv();
-        if (json.msg == true) {
-            $("div#feedback").append(successFeedback);
-            $("div#feedback").css("color", "green");
-        } else {
-            $("div#feedback").append(failFeedback);
-            $("div#feedback").css("color", "red");
-        }
-    });
-    */
     console.log("str: "+ str);
     console.log("myEmail: "+ myEmail);
      var theServer = "https://wwws.hit.ac.il/facebook/telemDev/TelemWebDevelopmentCourseContact_me.php";
@@ -105,7 +87,7 @@ function send2Server(str) {
              dataType: "jsonp",
                 data: {
                     theMailBody: str,
-                    sendTo: myEmail,
+                    sendTo: myEncode(myEmail),
                 },
                 cache: false,
                 complete : function(data) {
