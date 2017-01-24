@@ -72,6 +72,7 @@ function getFormValue() {
         theString += theValue + "\r\n";
 
     });
+    theString = "<div dir='rtl'>" + theString +"</div>";
     return theString;
 }
 
