@@ -25,47 +25,48 @@ $(function () {
 
 function getFormValue() {
     var theString = "";
-    $("form label").each(function () {
-    
+    $("body form").children().each(function () {
+
         var theId = "";
         var theTitle = "";
         var theValue = "";
 
-        theId = $(this).attr("for");
-        theTitle = $(this).text();
-
-        $(this).children().each(function () {
-        
-           if($(this).is("input"))
-           {
-              if($("#" + theId).attr("type")=="radio" && $("#" + theId).is(':checked'))
-               {
-                  theTitle="";
-                 theValue +=$("#" + theId).text() + " + ";         
+        if ($(this).attr("rel") != null) {
+            theId = $(this).attr("rel");
+            theTitle = $(this).text();
+            // dealing with radiobutton
+            if ($("#" + theId).find("input").is(":visible")) {
+                $("#" + theId).find("input").each(function () {
+                    if ($(this).is(':checked')) {
+                        theValue += $("label[for='" + $(this).attr("id") + "']").text() + " + ";
+                    }
+                });
+            } else {  // if not radiobutton
+                theTitle = $(this).text();
+                if ($("textarea#" + theId).is(":visible")) {
+                    theValue = $("textarea#" + theId).text();
+                    theValue = $.trim(theValue);
+                    if (theValue == "") {
+                        theValue = $("textarea#" + theId).val();
+                    }
+                } else if ($("select#" + theId).is(":visible")) {
+                    var optionValue = $("#" + theId).val();
+                    theValue = $("#" + theId).find("option[value='" + optionValue + "']").text();
+                } else {
+                    theValue = $("#" + theId).val();
                 }
-           else if($("#" + theId).attr("type")=="checkbox" && $("#" + theId).is(':checked'))
-           {  
-                theTitle="";
-               theValue += $("#" + theId).text() + " + "; 
-           }
-           else if($("#" + theId).attr("type")=="text" || $("#" + theId).attr("type")=="password")
-           {
-              theValue = $("#" + theId).text();
-           }
+            }
+
+        } else { // this is a checkbox
+            theId = $(this).attr("id");
+            theTitle = $("label[for='" + theId + "']").text();
+            if ($(this).is(':checked')) {
+                theValue = "כן";
+            } else {
+                theValue = "לא";
+            }
+
         }
-        else if($(this).next().is("select"))
-        {
-           var optionValue = $("#" + theId).val();
-           theValue = $("#" + theId).find("option[value='" + optionValue + "']").text();
-        }
-        else if($(this).next().is("textarea"))
-        {
-           theValue = $("textarea#" + theId).text();
-        }
-        
-        
-        });  
-      
 
         theString += "<b>"+ theTitle + " : "+ "</b>" ;
         theString += theValue + "<br/>";
