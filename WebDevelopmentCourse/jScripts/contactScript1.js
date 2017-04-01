@@ -32,7 +32,7 @@ function getFormValue() {
         var theValue = "";
 
         theId = $(this).attr("for");
-      
+        theTitle = $(this).text();
 
         $(this).children().each(function () {
         
@@ -40,11 +40,12 @@ function getFormValue() {
            {
               if($("#" + theId).attr("type")=="radio" && $("#" + theId).is(':checked'))
                {
-                     theTitle = $(this).text();
+                  theTitle="";
                  theValue +=$("#" + theId).text() + " + ";         
                 }
            else if($("#" + theId).attr("type")=="checkbox" && $("#" + theId).is(':checked'))
-           {
+           {  
+                theTitle="";
                theValue += $("#" + theId).text() + " + "; 
            }
            else if($("#" + theId).attr("type")=="text" || $("#" + theId).attr("type")=="password")
