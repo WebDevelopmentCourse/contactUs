@@ -31,8 +31,8 @@ function getFormValue() {
         var theTitle = "";
         var theValue = "";
 
-        if ($(this).attr("rel") != null) {
-            theId = $(this).attr("rel");
+        if ($(this).attr("for") != null) {
+            theId = $(this).attr("for");
             theTitle = $(this).text();
             // dealing with radiobutton
             if ($("#" + theId).find("input").is(":visible")) {
